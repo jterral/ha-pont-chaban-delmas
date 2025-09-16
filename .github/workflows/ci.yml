@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.15"
+      - uses: pre-commit/action@v3.0.1
+
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.15"
+
+  versioning:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    outputs:
+      tag: ${{ steps.get_calver.outputs.tag }}
+      version: ${{ steps.get_calver.outputs.version }}
+    steps:
+      - id: get_calver
+        uses: jterral/calendar-versioning-action@v1
+        with:
+          tag-push: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
