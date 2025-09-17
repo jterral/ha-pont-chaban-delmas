@@ -1,12 +1,12 @@
-# ha-pont-chaban-delmas
+# Pont Chaban-Delmas HA
 
-🌉🚢 Home Assistant Integration for Pont Chaban-Delmas
+Home Assistant Integration for Pont Chaban-Delmas 🌉🚢.
+
+> ⚠️ **Disclaimer** - This integration is a work in progress and may not be fully functional yet. Stay tuned for updates! 🚧
 
 ## 📋 Overview
 
 This Home Assistant integration provides real-time information about the Pont Chaban-Delmas bridge in Bordeaux, France. Know when the bridge is raised or lowered to help plan your routes and activities around this iconic landmark. 🚗⛵
-
-⚠️ **Work in Progress** - This integration is currently under construction and may not be fully functional. 🚧
 
 ## ✨ Features
 
