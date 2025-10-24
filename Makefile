@@ -17,3 +17,4 @@ help:  ## Display this help
 
 
 include make/precommit.mk
+include make/python.mk
