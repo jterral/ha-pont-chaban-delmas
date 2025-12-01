@@ -1,0 +1,20 @@
+meta {
+  name: Get All
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://datahub.bordeaux-metropole.fr/api/explore/v2.1/catalog/datasets/previsions_pont_chaban/records?limit=20
+  body: none
+  auth: none
+}
+
+params:query {
+  limit: 20
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

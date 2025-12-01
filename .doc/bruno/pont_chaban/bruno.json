@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Pont Chaban",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
