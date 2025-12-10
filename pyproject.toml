@@ -1,0 +1,27 @@
+[project]
+name = "pont-chaban-delmas"
+version = "2025.12.0"
+description = "HACS integration for Pont Chaban Delmas"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Jonathan Terral", email = "jterral@users.noreply.github.com" },
+]
+keywords = [
+  "homeassistant",
+  "hacs",
+  "integration",
+  "pont-chaban-delmas",
+  "bordeaux",
+]
+
+dependencies = ["aiohttp>=3.9.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=9.0.0", "pytest-asyncio>=1.3.0", "aioresponses>=0.7.8"]
+
+[project.urls]
+Homepage = "https://github.com/jterral/ha-pont-chaban-delmas"
+Repository = "https://github.com/jterral/ha-pont-chaban-delmas"
+Issues = "https://github.com/jterral/ha-pont-chaban-delmas/issues"
