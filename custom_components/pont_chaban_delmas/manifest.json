@@ -1,4 +1,10 @@
 {
   "domain": "pont_chaban_delmas",
-  "name": "Pont Chaban Delmas"
+  "name": "Pont Chaban Delmas",
+  "version": "2025.12.0",
+  "requirements": [
+    "aiohttp>=3.9.0"
+  ],
+  "documentation": "https://github.com/jterral/ha-pont-chaban-delmas",
+  "issue_tracker": "https://github.com/jterral/ha-pont-chaban-delmas/issues"
 }
