@@ -3,6 +3,8 @@ from types import TracebackType
 from typing import List, Optional, Type
 import aiohttp
 
+from .const import LOGGER
+
 @dataclass(frozen=True)
 class BridgeResponse:
     """Response data for a single bridge passage event.
@@ -71,10 +73,12 @@ class PontChaban:
 
     def __init__(self):
         """Initialize the Pont Chaban bridge component."""
+        LOGGER.debug("Initializing PontChaban client")
         self._base_address = self.BASE_ADDRESS
         self._client = aiohttp.ClientSession(raise_for_status=True)
 
     async def close(self) -> None:
+        LOGGER.debug("Closing PontChaban client")
         return await self._client.close()
 
     async def __aenter__(self) -> "PontChaban":
@@ -112,13 +116,20 @@ class PontChaban:
             "limit": str(limit),
         }
 
+        LOGGER.debug("Fetching bridge data with limit=%d", limit)
         try:
             async with self._client.get(self._make_url(), params=params) as resp:
+                LOGGER.debug("Received response with status=%d", resp.status)
                 ret = await resp.json()
                 if not isinstance(ret, dict) or "results" not in ret:
+                    LOGGER.error("Invalid response format from API")
                     raise ValueError("Invalid response format from API")
-                return ApiResponse.from_json(ret)
+                result = ApiResponse.from_json(ret)
+                LOGGER.info("Successfully fetched %d bridge records", len(result.results))
+                return result
         except aiohttp.ClientError as e:
+            LOGGER.error("Failed to fetch bridge data: %s", e)
             raise aiohttp.ClientError(f"Failed to fetch bridge data: {e}") from e
         except (ValueError, KeyError) as e:
+            LOGGER.error("Failed to parse API response: %s", e)
             raise ValueError(f"Failed to parse API response: {e}") from e

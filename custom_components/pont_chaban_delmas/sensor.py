@@ -12,6 +12,8 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 
+from .const import LOGGER
+
 
 def setup_platform(
     hass: HomeAssistant,
@@ -20,6 +22,7 @@ def setup_platform(
     discovery_info: DiscoveryInfoType | None = None
 ) -> None:
     """Set up the sensor platform."""
+    LOGGER.info("Setting up Pont Chaban-Delmas sensor platform")
     add_entities([BridgeClosureSensor()])
 
 class BridgeClosureSensor(SensorEntity):
