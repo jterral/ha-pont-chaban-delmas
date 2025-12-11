@@ -1,0 +1,19 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Pont Chaban-Delmas",
+        "description": "Set up the Pont Chaban-Delmas bridge integration to monitor bridge closures.",
+        "data": {}
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the API",
+      "invalid_data": "Invalid data received from the API",
+      "unknown": "Unexpected error occurred"
+    },
+    "abort": {
+      "already_configured": "This integration is already configured"
+    }
+  }
+}
