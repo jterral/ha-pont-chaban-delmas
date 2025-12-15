@@ -1,0 +1,37 @@
+min_version = "2025.12.7"
+
+[env]
+PROJECT_NAME = "ha-pont-chaban-delmas"
+
+_.python.venv = { path = ".venv", create = true }
+
+[tools]
+python = "{{ get_env(name='PYTHON_VERSION', default='3.13.2') }}"
+uv = "latest"
+
+[tasks.info]
+description = "Print project information"
+run = '''
+echo "Project: $PROJECT_NAME"
+echo "Virtual Environment: $VIRTUAL_ENV"
+'''
+
+[tasks."python:configure"]
+description = "Configure the Python environment"
+run = "uv sync"
+
+[tasks."python:lint"]
+description = "Lint the code"
+run = "uv run ruff check"
+
+[tasks."python:format"]
+description = "Format the code"
+run = "uv run ruff format"
+
+[tasks."python:test-unit"]
+description = "Run unit tests"
+run = "pytest tests/unit/"
+
+[tasks."python:test-all"]
+description = "Run all tests"
+run = "pytest tests/"
