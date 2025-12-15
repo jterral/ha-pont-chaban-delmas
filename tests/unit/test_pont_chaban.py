@@ -1,6 +1,7 @@
 import pytest
 from custom_components.pont_chaban_delmas.pont_chaban import PontChaban
 
+
 @pytest.fixture
 def json_record_fields():
     # Structure often returned by the API (record.fields)
@@ -16,6 +17,7 @@ def json_record_fields():
             }
         }
     }
+
 
 async def test_fetch_data_returns_closures() -> None:
     # Arrange

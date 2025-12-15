@@ -18,6 +18,7 @@ class BridgeClosure:
         closure_type: Type of closure (e.g., "Totale", "Partielle").
         is_total: Whether it's a total closure.
     """
+
     boat: str
     start_utc: datetime
     end_utc: datetime

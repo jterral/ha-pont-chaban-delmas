@@ -168,8 +168,12 @@ class PontChabanRepository:
             ValueError: If datetime parsing fails.
         """
         try:
-            start_utc = self._parse_datetime(dto.date_passage, dto.fermeture_a_la_circulation)
-            end_utc = self._parse_datetime(dto.date_passage, dto.re_ouverture_a_la_circulation)
+            start_utc = self._parse_datetime(
+                dto.date_passage, dto.fermeture_a_la_circulation
+            )
+            end_utc = self._parse_datetime(
+                dto.date_passage, dto.re_ouverture_a_la_circulation
+            )
 
             # Handle midnight crossing
             if end_utc <= start_utc:

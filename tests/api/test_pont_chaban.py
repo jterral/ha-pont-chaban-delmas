@@ -1,6 +1,7 @@
 import pytest
 from custom_components.pont_chaban_delmas.pont_chaban import PontChaban
 
+
 @pytest.mark.asyncio
 async def test_api_returns_closures() -> None:
     # Arrange
