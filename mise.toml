@@ -3,9 +3,14 @@ min_version = "2025.12.7"
 [env]
 PROJECT_NAME = "ha-pont-chaban-delmas"
 
+_.python.venv = { path = ".venv" }
+
 [tools]
 pre-commit = { version = "4.5.0" }
 uv = { version = "0.9.17" }
+
+[settings]
+python.uv_venv_auto = true
 
 [tasks.info]
 description = "Print project information"
