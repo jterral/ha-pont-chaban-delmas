@@ -11,5 +11,9 @@ echo -e "✅ Mise configuration completed."
 
 # Pre-commit
 $MISE precommit:configure
+echo -e "✅ Pre-commit configuration completed."
 
-echo -e "Devcontainer setup script completed."
+# Python environment
+echo -e "Setting up Python environment..."
+$MISE python:init
+echo -e "✅ Python environment setup completed."

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#MISE description="Initialize Python project environment"
+#MISE depends=["python:check-prerequisites"]
+
+set -e
+
+echo "⚙️ Initializing Python project environment..."
+uv sync

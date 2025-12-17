@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-#MISE description="Configure Python environment"
-#MISE depends=["python:check-prerequisites"]
-
-set -e
-
-echo "⚙️ Configuring Python environment..."
-uv sync
