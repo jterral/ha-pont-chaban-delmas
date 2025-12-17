@@ -28,3 +28,9 @@ repos:
     hooks:
       - id: gitleaks
         name: detect hardcoded secrets
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.9
+    hooks:
+      - id: ruff-check
+      - id: ruff-format

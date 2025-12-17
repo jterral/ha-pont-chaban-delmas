@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#MISE description="Run Python tests"
+#USAGE flag "--all" "Run all tests, including integration ones"
+#MISE depends=["python:check-prerequisites"]
+
+set -e
+
+echo "🐍 Running Python tests..."
+
+if [[ "$1" == "--all" ]]; then
+    pytest tests/
+else
+    pytest tests/unit
+fi

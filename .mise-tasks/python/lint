@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#MISE description="Run Python linting"
+#MISE depends=["python:check-prerequisites"]
+
+set -e
+
+echo "🔎 Running Python linting..."
+uv run ruff check .
